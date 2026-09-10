@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span><h1>Simulador financeiro</h1></span>
+    <span><h3>Baunilia Planifolia</h3></span>
+    <label for="ipt_numPlantas">Insira a quantidade de plantas do seu cultivo: </label>
+    <input type="text" id="ipt_numPlantas">
+    <button onclick="calcular()"> Calcular </button><br>
+    <label for="ipt_numPlantas">Insira o seu faturamento mensal: </label>
+    <input type="text" id="ipt_fatMensal">
+    <button onclick="calcular2()"> Calcular Faturamento potencial </button>
+    <div id="div_exibir"></div> 
+</body>
+</html>
+<script>
+    function calcular(){
+    let numPlanta = Number(ipt_numPlantas.value)
+    let total = numPlanta*30.94
+    div_exibir.innerHTML += `Se seu cultivo de  <b style="color: green;">${numPlanta}</b> plantas ficarem um período sem monitoramento da luminosidade alocada você terá uma perda estimada de <b style="color: red;">${total}R$</b><br>`
+}
+    function calcular2(){
+    let fatMensal = Number(ipt_fatMensal.value);
+    let fatPotencial = fatMensal*2.25;
+    let total = fatMensal*1.25 ;
+    div_exibir.innerHTML += `Com o devido monitoramento de luminosidade a Baunilia sofre um aumento na qualidade de sua matéria prima que pode te oferecer até <b style="color: green;">${total}R$</b> a mais de lucro! <br> Fazendo seu faturamento ser aproximadamente <b style="color: blue;">${fatPotencial}R$!</b><br> `
+    }
+    
+</script>
