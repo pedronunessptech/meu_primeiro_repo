@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <input type="text" id="ipt_idade"><br>
+    <button onclick="apsHomem()">Aposentadoria Homem</button>
+    <button onclick="apsMulher()">Aposentadoria Mulher</button>
+
+    <div id="div_aps"></div>
+    
+</body>
+</html>
+<script>
+    function apsHomem() {
+    
+    let idade = Number(ipt_idade.value)
+    let tempAposentadoria = 70 - idade
+        
+    div_aps.innerHTML = `Faltam ${tempAposentadoria} anos para a sua aposentaria`;
+
+}
+    function apsMulher() {
+    
+    let idade = Number(ipt_idade.value)
+    let tempAposentadoria = 60 - idade
+       
+    div_aps.innerHTML = `Faltam ${tempAposentadoria} anos para a sua aposentaria`;
+
+}
+</script>

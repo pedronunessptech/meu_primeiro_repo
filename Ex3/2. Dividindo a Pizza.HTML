@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_vlrPizza" placeholder="Insira o valor da Pizza">
+    <input type="text" id="ipt_vlrPessoas" placeholder="Insira a quantidade de pessoas">
+    <button onclick="calculoPizza()">#LovaPizza</button>
+    <div id="div_Pizza"></div>
+</body>
+</html>
+<script>
+function calculoPizza (){
+let Valor = Number(ipt_vlrPizza.value)
+let Amigos = Number(ipt_vlrPessoas.value)
+
+div_Pizza.innerHTML = `Cada um dos ${Amigos} amigos vai pagar R$${Valor/Amigos}`;
+
+}
+</script>
