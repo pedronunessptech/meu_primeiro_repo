@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Seleção de Pilotos</h1>
+    <label for="ipt_alturaInicial">Insira a altura inicial: </label>
+    <input type="text" id="ipt_alturaInicial"><br>
+    <label for="ipt_alturaFinal">Insira a altura inicial: </label>
+    <input type="text" id="ipt_alturaFinal"><br>
+    <label for="ipt_nome">Insira seu nome: </label>
+    <input type="text" id="ipt_nome"><br>
+    <label for="ipt_altura">Insira a sua altura: </label>
+    <input type="text" id="ipt_altura"><br>
+    <button onclick="verificar()">Verificar Candidato</button>
+</body>
+</html>
+<script>
+    function verificar(){
+        let alturaIni = Number(ipt_alturaInicial.value);
+        let alturaFin = Number(ipt_alturaFinal.value);
+        let altura = Number(ipt_altura.value);
+        let nome = ipt_nome.value;
+        if(alturaIni > 1 && alturaFin > alturaIni){
+
+        }
+    }
+</script>

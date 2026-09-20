@@ -1,0 +1,28 @@
+create database projetoPiBaunilia;
+use projetoPiBaunilia;
+
+create table usuario(
+id_user int primary key auto_increment,
+nome varchar(40) unique,
+empresa varchar(40),
+produto char(15)
+);
+
+create table sensor(
+id int primary key auto_increment,
+nome_sensor varchar(30),
+codigo_sensor char(25) unique,
+zona_estufa varchar(30)
+);
+
+create table leituras(
+id int primary key auto_increment,
+codigo_sensor int,
+data_hora datetime default current_timestamp,
+lux_lidos float,
+ppfd float
+);
+
+select*from usuario;
+select*from sensor;
+select*from leituras;

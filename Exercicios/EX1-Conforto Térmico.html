@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Conforto Térmico</h2><br>
+    <label for="ipt_temperatura">Insira a temperatura atual: </label>
+    <input type="text" id="ipt_temperatura">
+    <button onclick="verificarTemp()">Ver situação</button>
+</body>
+</html>
+<script>
+    function verificarTemp(){
+        let temperatura = Number(ipt_temperatura.value);
+        if(temperatura >= 21 && temperatura <=24){
+            alert('Temperatura confortável :D')
+        }else{
+            alert('Temperatura DESCONFORTÁVEL :C"')
+        }
+    }
+</script>

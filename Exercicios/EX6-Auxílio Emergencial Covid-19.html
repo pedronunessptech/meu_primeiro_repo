@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Auxilio Covid-19</h1>
+    <label for="ipt_renda">Insira sua renda pessoal: </label>
+    <input type="text" id="ipt_rendaPes"><br>
+    <label for="ipt_renda">Insira sua renda familiar: </label>
+    <input type="text" id="ipt_rendaFam"><br>
+    <Button onclick="verificar()">Terei o benefício?</Button>
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+    let rPessoal = Number(ipt_rendaPes.value)
+    let rFamiliar = Number(ipt_rendaFam.value)
+    if(rPessoal<=2000 || rFamiliar<=3000){
+        div_exibir.innerHTML = "Você terá direito ao auxílio"
+    }else{
+        div_exibir.innerHTML = "Sem direito ao auxílio"
+    }
+    }
+</script>

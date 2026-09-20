@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Processo Seletivo</h1>
+    <label for="ipt_enem">Insira sua nota do enem: </label>
+    <input type="text" id="ipt_enem"><br>
+    <label for="ipt_enem">Insira sua nota no vestibular da faculdade: </label>
+    <input type="text" id="ipt_vest"><br>
+    <button onclick="avaliacao()">Avaliação</button>
+</body>
+</html>
+<script>
+    function avaliacao(){
+        let notaEnem = Number(ipt_enem.value);
+        let notaVestibular = Number(ipt_vest.value);
+        if(notaEnem>=800 || notaVestibular>=700){
+            alert('Parabéns! Aprovado')
+        }else{
+            alert('Tente semestre que vem!')
+        }
+    }
+</script>

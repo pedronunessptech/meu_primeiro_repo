@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Frutas</h1>
+    <label for="ipt_nomeFruta">Insira o nome da fruta: </label>
+    <input type="text" id="ipt_nomeFruta">
+    <button onclick="fruta()">Vai comer?</button>
+</body>
+</html>
+<script>
+    function fruta(){
+        let fruta = ipt_nomeFruta.value
+        if(fruta == 'Abacaxi' || fruta == 'Uva'){
+            alert(`Sim, vai comer ${fruta}`)
+        }else{
+            alert(`A fruta ${fruta} ela não come`)
+        }
+    }
+</script>

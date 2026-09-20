@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <Label>Insira seu Login: </Label>
+    <input type="text" id="ipt_login"><br>
+    <Label>Insira sua senha: </Label>
+    <input type="password" id="ipt_senha"><br>
+    <Label>Insira seu código de segurança: </Label>
+    <input type="password" id="ipt_cds"><br>
+    <button onclick="entrar()">Entrar</button>
+</body>
+</html>
+<script>
+    function entrar(){
+    let login = ipt_login.value
+    let senha = ipt_senha.value
+    let cds = ipt_cds.value
+    if(login == 'SPTech' && senha == 'digital' && cds == '123' ){
+        alert('Usuário autenticado com sucesso')
+    }else{
+        alert('Falha na autenticação')
+    }
+    }
+</script>
