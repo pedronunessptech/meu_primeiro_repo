@@ -1,3 +1,4 @@
+create database sprint2;
 use sprint2;
 
 create table atleta(
@@ -184,6 +185,8 @@ insert into Pessoa2 values
 (default, 'Gabriel Santos', '2020-04-18', 3),
 (default, 'Fernanda Lima', '2016-09-02', 4);
 
+ alter table Pessoa2 add constraint fkPessoa1Pessoa2 foreign key(fkPessoa1) references Pessoa1(idPessoa1);
+
 select*from Pessoa2;
 
 select Pessoa1.nome as NOME1, Pessoa2.nome as NOME2 from Pessoa1 join Pessoa2 where fkPessoa1 = idPessoa1;
@@ -198,3 +201,141 @@ select ifnull(nome,'Sem nome') as NOME,
         
 -- -------------------------------------------------------------------- --
 -- Exercicio 5 --
+
+use sprint2;
+
+
+create table candidato (
+    idCandidato int auto_increment primary key,
+    nome varchar(45) not null,
+    cpf varchar(11) not null unique,
+    data_nascimento date not null
+);
+
+create table primeira_habilitacao (
+    idHabilitacao int auto_increment primary key,
+    fkCandidato int not null unique,
+    categoria varchar(10) not null check (categoria in ('A', 'B', 'A e B', 'ACC', 'ACC e B')),
+    data_emissao date not null,
+    data_validade date not null,
+    status varchar(20) default 'em andamento'
+);
+
+insert into candidato (nome, cpf, data_nascimento) values
+('lucas oliveira', '11122233344', '2005-05-12'),
+('mariana santos', '22233344455', '2004-11-03'),
+('carlos eduardo', '33344455566', '2006-01-20'),
+('beatriz costa', '44455566677', '2003-08-15'),
+('gabriel souza', '55566677788', '2005-12-01');
+
+
+insert into primeira_habilitacao (fkCandidato, categoria, data_emissao, data_validade, status) values
+(1, 'A', '2026-01-10', '2027-01-10', 'ativa'),
+(2, 'B', '2026-02-15', '2027-02-15', 'ativa'),
+(3, 'A e B', '2026-03-20', '2027-03-20', 'em andamento'),
+(4, 'ACC', '2026-04-05', '2027-04-05', 'ativa'),
+(5, 'ACC e B', '2026-05-18', '2027-05-18', 'em andamento');
+
+alter table primeira_habilitacao rename column status to statuss;
+alter table primeira_habilitacao add constraint fkCandidatoHabi foreign key(fkCandidato) references candidato(idCandidato);
+
+select*from candidato;
+select*from primeira_habilitacao;
+
+select 
+    candidato.nome as nome_candidato,
+    candidato.cpf as documento_cpf,
+    primeira_habilitacao.categoria as categoria_habilitacao,
+    primeira_habilitacao.statuss as situacao_processo
+from candidato join primeira_habilitacao where idCandidato = fkCandidato;
+
+select 
+    candidato.nome,
+    primeira_habilitacao.categoria,
+    case 
+        when primeira_habilitacao.categoria = 'A e B' then 'categoria dupla (moto e carro)'
+        when primeira_habilitacao.categoria = 'A' then 'apenas motociclo'
+        when primeira_habilitacao.categoria = 'B' then 'apenas automóvel'
+        else 'ciclomotor/acc'
+    end as descricao_categoria
+from candidato join primeira_habilitacao where idCandidato = fkCandidato;
+
+insert into candidato (nome, cpf, data_nascimento) values 
+('rodrigo alves', '66677788899', '2002-09-10');
+
+insert into primeira_habilitacao (fkCandidato, categoria, data_emissao, data_validade, statuss) values 
+(6, 'A', '2026-06-01', '2027-06-01', null);
+
+select 
+    candidato.nome as nome_candidato,
+    ifnull(primeira_habilitacao.categoria, 'sem categoria') as categoria_habilitacao,
+    ifnull(primeira_habilitacao.statuss, 'não iniciado') as status_processo
+from candidato join primeira_habilitacao
+where idCandidato = fkCandidato;
+
+-- ----------------------------------------------------------------------------------------------------------------------------- --
+-- Exercicio 6 --
+
+use sprint2;
+
+create table farmacia (
+idfarmacia int primary key auto_increment,
+nome varchar(45),
+telefone varchar(20)
+);
+
+create table endereco (
+idendereco int primary key auto_increment,
+rua varchar(45),
+bairro varchar(45),
+fkfarmacia int unique
+);
+
+create table farmaceutico (
+idfarmaceutico int primary key auto_increment,
+nome varchar(45),
+cpf varchar(11),
+fkfarmacia int
+);
+
+insert into farmacia values
+(default, 'farmacia sp', '11999990001'),
+(default, 'farmacia vida', '11999990002'),
+(default, 'farmacia saude', '11999990003'),
+(default, 'farmacia popular', '11999990004'),
+(default, 'farmacia bem estar', '11999990005');
+
+insert into endereco values
+(default, 'rua a', 'centro', 1),
+(default, 'rua b', 'jardins', 2),
+(default, 'rua c', 'mooca', 3),
+(default, 'rua d', 'pinheiros', 4),
+(default, 'rua e', 'tatuape', 5);
+
+insert into farmaceutico values
+(default, 'carlos silva', '12345678901', 1),
+(default, 'ana souza', '23456789012', 1),
+(default, 'marcos lima', '34567890123', 2),
+(default, 'julia costa', '45678901234', 3),
+(default, 'paulo santos', '56789012345', 4);
+
+alter table endereco add constraint fkfarmaciaendereco foreign key(fkfarmacia) references farmacia(idfarmacia);
+alter table farmaceutico add constraint fkfarmaciafarmaceutico foreign key(fkfarmacia) references farmacia(idfarmacia);
+
+select*from farmacia;
+select*from endereco;
+select*from farmaceutico;
+
+select farmacia.nome, endereco.rua, farmaceutico.nome from farmacia join endereco join farmaceutico where endereco.fkfarmacia = farmacia.idfarmacia and farmaceutico.fkfarmacia = farmacia.idfarmacia;
+
+select farmacia.nome as nomefarmacia, endereco.rua as ruafarmacia, farmaceutico.nome as nomefarmaceutico from farmacia join endereco join farmaceutico where endereco.fkfarmacia = farmacia.idfarmacia and farmaceutico.fkfarmacia = farmacia.idfarmacia;
+
+select farmaceutico.nome,
+    case
+        when farmaceutico.fkfarmacia > 0 then 'contratado'
+    end as statuscontrato
+from farmaceutico join farmacia where farmaceutico.fkfarmacia = farmacia.idfarmacia;
+
+select ifnull(farmaceutico.cpf, 'sem cpf') as cpf,
+    farmaceutico.nome as nomefarmaceutico
+from farmaceutico join farmacia where farmaceutico.fkfarmacia = farmacia.idfarmacia;
