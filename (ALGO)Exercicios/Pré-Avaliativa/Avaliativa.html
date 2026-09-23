@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Controle do faturamento diário</h2>
+    <label for="slctCombustiveis">Selecione o tipo de combustivel: </label>
+    <select name="combustivel" id="slctCombustiveis">
+        <option value="Gasolina">Gasolina</option>
+        <option value="Etanol">Etanol</option>
+        <option value="Diesel">Diesel</option>
+    </select><br>
+
+    <label for="iptQtd">Insira a quantidade de litros vendida: </label>
+    <input type="text" id="iptQtd"><br>
+     <label for="iptHorario">Insira o horario da venda (00 a 23 – somente a hora, sem os minutos): </label>
+    <input type="text" id="iptHorario"><br>
+
+    <button onclick="calcular()">Teste</button>
+
+    <div id="div_exibir"></div>
+</body>
+</html>
+<script>
+let venda = venda ++ ;
+let recebimento = 0;
+let desconto = 0;
+
+
+function calcular(){
+    
+    let quantidadeVenda = iptQtd.value
+    let horarioVenda = iptHorario.value
+    let preco = 0;
+    if(slctCombustiveis = 'Gasolina'){
+        let preco = 6.49;
+        let desconto = 0.0505
+    }else if(slctCombustiveis = 'Etanol'){
+        let preco = 4.44;
+        let desconto = 0.048
+    }else{
+        let preco = 4.39
+        let desconto = 0.0303
+    }
+    let total = preco*quantidadeVenda
+    if(quantidadeVenda>=20 && horarioVenda >21 && horarioVenda <6){
+        let desconto = total*desconto
+        let total = desconto - total
+    }else{
+        total = total
+    }
+
+    div_exibir.innerHTML += `Venda ${numeroVenda}ª – Valor Recebido = R$${total.toFixed(2)} – Desconto Concedido = R$${desconto} – Acumulado dos Recebimentos= R$${total.toFixed(2)}- Acumulado dos Descontos = R$${desconto}`
+}
+</script>
+

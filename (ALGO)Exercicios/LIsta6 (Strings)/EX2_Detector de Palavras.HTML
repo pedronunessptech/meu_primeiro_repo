@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Detector de Palavras!</h2>
+    <label for="iptFrase">Insira uma frase: </label>
+    <input type="text" id="iptFrase">
+    <button onclick="analisar()">Analisar Frase</button>
+    <div id="exibir"></div>
+    
+</body>
+</html>
+<script>
+    function analisar(){
+        let frase = iptFrase.value
+        if(frase.includes("teste")||frase.includes("spam")||frase.includes("abc")){
+            exibir.innerHTML = `<b style="color: red;">Frase Inválida!</b>`   
+        }else{
+            exibir.innerHTML = `<b style="color: green;">Frase Válida!</b>`   
+        }
+    }
+</script>

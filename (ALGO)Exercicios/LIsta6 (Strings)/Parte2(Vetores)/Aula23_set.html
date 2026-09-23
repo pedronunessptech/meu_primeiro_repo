@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="iptValor">
+    <br>
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="exibir()">Exibir</button>
+    <button onclick="pesquisa()">Pesquisar</button>
+    <div id="divExibir"></div>
+</body>
+</html>
+<script>
+    let lista = ['banana','pera','uva'];
+    function remover(){
+        let removido = lista.pop;
+        console.log(`${lista}`);
+
+    }
+    function exibir(){
+        divExibir.innerHTML = `${lista}`.replaceAll(',','<br>');
+    }
+    function adicionar(){
+        let valor = iptValor.value;
+        lista.push(valor);
+    } 
+    function analisar(){
+        divExibir
+    }
+
+    function pesquisa(){
+        let valor = iptValor.value;
+        if(lista.includes(valor)){
+            let indice = lista.indexOf(valor);
+            divExibir.innerHTML = `A lista inclui ${valor}, no indice ${indice}`
+        }else{
+            divExibir.innerHTML = `A lista não inclui ${valor}`
+        }
+
+    }
+</script>
+
+<!-- vetor.at
+vetor.push
+vetor.pop
+vetor.indexOf 
+-->

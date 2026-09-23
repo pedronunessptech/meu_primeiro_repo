@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Primeira e Última letra!</h2>
+    <label for="iptFrase">Insira uma frase: </label>
+    <input type="text" id="iptFrase"><br>
+    <label for="iptPalavra">Insira uma palavra: </label>
+    <input type="text" id="iptPalavra">
+    <button onclick="analisar()">Analisar Frase</button>
+    <div id="exibir"></div>
+    
+</body>
+</html>
+<script>
+    function analisar(){
+        let frase = iptFrase.value
+        let palavra = iptPalavra.value
+        if(frase.endsWith(palavra) && frase.startsWith(palavra)){
+            exibir.innerHTML = `A frase começa e termina com ${palavra}!`
+        } else if(frase.endsWith(palavra)){
+            exibir.innerHTML = `A frase termina com ${palavra}!`
+        } else if(frase.startsWith(palavra)){
+            exibir.innerHTML = `A frase começa com ${palavra}!`
+        }else{
+            exibir.innerHTML = `A frase não começa e nem termina com ${palavra}!`
+        }
+            exibir.innerHTML += ` Sendo ${palavra} a palavra informada!`
+    }
+</script>
