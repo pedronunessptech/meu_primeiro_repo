@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="palavra()">Algoritimos</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function palavra(){
+        let qtd = 0;
+        let palavra = '';
+        while(qtd < 7){
+            qtd ++
+            palavra = 'Eu adoro programar!'
+            exibir.innerHTML += `${qtd} - ${palavra} <br>`
+            
+        }
+    }
+
+</script>
+<!-- 3. Frase Numerada
+
+Refaça o programa anterior de tal forma que, antes de cada frase apareça um contador. Ex: Se a frase digitada foi “Boa Tarde” a página ficará assim:   
+
+   1. Boa tarde   
+
+   2. Boa tarde   
+
+   ...   
+
+   7. Boa tarde  --> 
