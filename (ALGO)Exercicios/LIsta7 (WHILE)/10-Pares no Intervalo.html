@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="ipt_intervalo">Insira o valor do intervalo crescente de valores numéricos: </label>
+    <input type="text" id="ipt_intervalo">
+    <button onclick="pares()">S2 Pares</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    let num = 0;
+    function pares(){
+        let intervalo = Number(ipt_intervalo.value)
+        while(num < intervalo){
+            num ++
+            if(num%2 == 0){
+                exibir.innerHTML += `${num}<br>`
+            }
+        }
+        
+    }
+</script>
+<!-- 10. Pares no Intervalo  
+
+Crie um programa o qual:
+
+a) Solicite um intervalo crescente de valores numéricos    
+
+b) Ao clicar num botão "S2 Pares"...   
+
+c) Exiba, debaixo do botão, todos os números pares contidos no intervalo.   -->
+

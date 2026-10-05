@@ -224,3 +224,78 @@ c) Ao clicar num botão "Divisível"...
 c) Exiba, debaixo do botão, todos os números contidos no intervalo do item a que NÃO são divisíveis pelo número do item b.
 
 OBS: ao informar '1 a 10' no intervalo e informar '3' no divisor, deve exibir todos os números, exceto os múltiplos de 3 (como 3, 6 e 9).
+
+
+2. Parte 2 - While
+#Ficadica: Use a técnica de dedução de múltiplos por uso do resto da divisão
+
+15. É tri/penta!
+
+Crie um programa o qual:
+
+a) Deve ter dois campos para o usuário informar o intervalo crescente de números
+
+b) Deve ter um botão chamado "Curto 3 e 5!"
+
+c) Ao clicar nesse botão, devem aparecer QUASE todos os números entre o intervalo informado, porém...
+
+d) Se o número for múltiplo de 3, ao invés do número exiba "É TRI!". Se o número for múltiplo de 5, ao invés do número exiba "É PENTA!". Se o número for múltiplo de 3 e também de 5, ao invés do número exiba "É TRI!É PENTA!".
+
+
+
+
+
+16. Treino de Musculação
+
+Crie um programa o qual:
+
+a) Pergunte de quantos em quantos dias o usuário faz musculação (é só uma informação, só 1 número, ok?)   
+
+b) Ao clicar em "Exibir rotina mensal", mostre uma sequência de 30 frases, como neste exemplo:   
+
+         Dia 1 - Musculação   
+
+         Dia 2 - Comer, dormir etc   
+
+         Dia 3 - Comer, dormir etc   
+
+         Dia 4 - Musculação   
+
+         Dia 5 - Comer, dormir etc   
+
+         Dia 6 - Comer, dormir etc   
+
+         Dia 7 - Musculação   
+
+         ...   
+
+         Dia 30 - Comer, dormir etc   
+
+O Dia 1 sempre é de "Musculação"   
+
+Considere que, nesse exemplo acima, o usuário informou 3 no item a)   
+
+
+
+17. Um elefante, incomoda muita gente...
+
+No filme clássico "Ghost, do outra lado da vida", o protagonista, para atazanar a vida da médium canta a seguinte canção...   
+
+    1 elefante incomoda muita gente!
+    2 elefantes, incomodam, incomodam, muito mais!  
+
+    1 elefante incomoda muita gente!
+    3 elefantes, incomodam, incomodam, incomodam, muito mais!   
+
+    1 elefante incomoda muita gente!   
+    4 elefantes, incomodam, incomodam, incomodam, incomodam, muito mais!
+
+    ... e assim por diante, sempre repetindo que "1 incomoda" e "N incomodam"   
+
+Crie um programa o qual:   
+
+a) Solicite ao usuário a quantidade elefantes;  
+
+b) Ao clicar em "Atazanar a médium", exiba sempre o trecho da canção de 1 elefante, seguido do trecho com 2 elefantes e depois 3... até a quantidade de elefantes indicado em a). Note que a palavra "incomodam" repete-se conforme essa mesma quantidade.   
+
+Por exemplo, o se o usuário informar 4 em a), devem aparecer 3 estrofes, como no enunciado da questão, de "2 elefantes" até "4 elefantes", sempre repetindo a frase do "1 elefante incomoda muita gente" antes de cada estrofe. 

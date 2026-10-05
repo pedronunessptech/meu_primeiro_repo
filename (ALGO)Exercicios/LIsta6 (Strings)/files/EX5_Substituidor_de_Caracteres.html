@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Substituidor de Caracteres</title>
+</head>
+<body>
+    <h2>Substituidor de Caracteres!</h2>
+    <label for="iptSenha">Insira uma senha: </label>
+    <input type="text" id="iptSenha" oninput="trocar()">
+    <div id="exibir"></div>
+<script>
+    function trocar(){
+        let senha = iptSenha.value;
+        let forte = senha.replaceAll('a','@').replaceAll('A','@').replaceAll('e','3').replaceAll('E','3');
+        exibir.innerHTML = `Senha mais forte: ${forte}`;
+    }
+</script>
+</body>
+</html>

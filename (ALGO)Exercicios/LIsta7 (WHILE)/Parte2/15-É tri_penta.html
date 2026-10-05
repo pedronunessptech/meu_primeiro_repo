@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="ipt_intervalo1">Insira o número inicial: </label>
+    <input type="text" id="ipt_intervalo1">
+    <label for="ipt_intervalo2">Insira o número final: </label>
+    <input type="text" id="ipt_intervalo2">
+    <button onclick="calcular()"> Curto 3 e 5! </button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+    let numIni = Number(ipt_intervalo1.value)
+    let numFim = Number(ipt_intervalo2.value)
+    while(numIni<=numFim){
+        if(numIni % 3 == 0){
+            exibir.innerHTML += `${numIni} É TRI!<br>`
+            numIni ++
+        }else if(numIni%5 == 0){
+            exibir.innerHTML += `${numIni} É PENTA!<br>`
+            numIni ++
+        }else{
+            exibir.innerHTML += `${numIni}<br>`
+            numIni ++
+        }
+    }
+}
+</script>
+<!-- 15. É tri/penta!
+
+Crie um programa o qual:
+
+a) Deve ter dois campos para o usuário informar o intervalo crescente de números
+
+b) Deve ter um botão chamado "Curto 3 e 5!"
+
+c) Ao clicar nesse botão, devem aparecer QUASE todos os números entre o intervalo informado, porém...
+
+d) Se o número for múltiplo de 3, ao invés do número exiba "É TRI!". Se o número for múltiplo de 5, ao invés do número exiba "É PENTA!". Se o número for múltiplo de 3 e também de 5, ao invés do número exiba "É TRI!É PENTA!". -->

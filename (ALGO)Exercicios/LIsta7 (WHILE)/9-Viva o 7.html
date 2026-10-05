@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="ipt_limite">Insira um numero(0-2000): </label>
+    <input type="text" id="ipt_limite">
+    <button onclick="calcular()">Viva o 7!</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    let num = 0;
+    function calcular(){
+        let limite = Number(ipt_limite.value)
+        if(limite >= 0 && limite<2000){
+        while(num <= limite){
+            num ++
+        if(num%7 ==0){
+            exibir.innerHTML += `${num}<br>`
+        }
+    }
+    }else{
+        exibir.innerHTML = `<b style="color: red;">Valor inválido!</b><br>`
+    }
+}
+</script>
+<!-- 9. Viva o 7!
+
+Crie um programa o qual:
+
+a) Receba um número (tem que estar entre 0 e 200);  
+
+b) Ter um botão chamado "Viva o 7!"   
+
+c) Ao clicar nesse botão, devem aparecer todos os múltiplos de 7 entre 0 e o número informado em a) -->

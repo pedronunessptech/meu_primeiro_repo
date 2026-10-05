@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senha Forte ou Fraca</title>
+</head>
+<body>
+    <h2>Senha Forte ou Fraca!</h2>
+    <label for="iptSenha">Insira uma senha: </label>
+    <input type="text" id="iptSenha" oninput="verificar()">
+    <div id="exibir"></div>
+<script>
+    function verificar(){
+        let senha = iptSenha.value;
+        let criterios = 0;
+
+        // mínimo de 8 caracteres
+        if(senha.length >= 8){
+            criterios++;
+        }
+        // tem maiúscula: se mudar ao virar minúscula, existia uma maiúscula
+        if(senha != senha.toLowerCase()){
+            criterios++;
+        }
+        // tem minúscula: se mudar ao virar maiúscula, existia uma minúscula
+        if(senha != senha.toUpperCase()){
+            criterios++;
+        }
+
+        if(criterios == 3){
+            exibir.innerHTML = `<b style="color: green;">Forte</b>`;
+        } else if(criterios == 2){
+            exibir.innerHTML = `<b style="color: orange;">Média</b>`;
+        } else if(criterios == 1){
+            exibir.innerHTML = `<b style="color: red;">Fraca</b>`;
+        } else {
+            exibir.innerHTML = `<b style="color: darkred;">Insegura</b>`;
+        }
+    }
+</script>
+</body>
+</html>

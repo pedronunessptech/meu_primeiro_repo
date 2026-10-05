@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observador de Índices</title>
+</head>
+<body>
+    <h2>Observador de Índices!</h2>
+    <label for="iptFrase">Insira uma frase: </label>
+    <input type="text" id="iptFrase" oninput="observar()"><br>
+    <label for="iptPosicao">Qual letra deseja ver (número): </label>
+    <input type="number" id="iptPosicao" oninput="observar()">
+    <div id="exibir"></div>
+<script>
+    function observar(){
+        let frase = iptFrase.value;
+        let posicao = Number(iptPosicao.value);
+        exibir.innerHTML = `A primeira letra é: ${frase.at(0)}<br>
+        A ${posicao}ª letra é: ${frase.at(posicao - 1)}<br>
+        A última letra é: ${frase.at(-1)}`;
+    }
+</script>
+</body>
+</html>

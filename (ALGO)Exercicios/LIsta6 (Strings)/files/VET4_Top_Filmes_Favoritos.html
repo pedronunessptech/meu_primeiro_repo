@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Filmes Favoritos</title>
+</head>
+<body>
+    <h2>Top Filmes Favoritos!</h2>
+    <label for="iptFilme">Nome do filme: </label>
+    <input type="text" id="iptFilme">
+    <button onclick="cadastrar()">Cadastrar filme</button>
+    <button onclick="verFavoritos()">Ver Favoritos</button>
+    <div id="exibir"></div>
+<script>
+    var filmes = [];
+
+    function cadastrar(){
+        filmes.push(iptFilme.value);
+        iptFilme.value = '';
+        iptFilme.focus();
+    }
+    function verFavoritos(){
+        if(filmes.length == 0){
+            exibir.innerHTML = `Nenhum filme cadastrado ainda.`;
+        } else {
+            exibir.innerHTML = `${filmes}`.replaceAll(',', '<br>');
+            exibir.innerHTML += `<br><br>Total: ${filmes.length}<br>
+            O filme que mais gosta é ${filmes[0]}.<br>
+            E desses, o que menos gosta é ${filmes.at(-1)}`;
+        }
+    }
+</script>
+</body>
+</html>

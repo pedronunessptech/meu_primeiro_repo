@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Favoritos</title>
+</head>
+<body>
+    <h2>Painel de Favoritos!</h2>
+    <label for="iptFilme">Nome do filme: </label>
+    <input type="text" id="iptFilme">
+    <button onclick="cadastrar()">Cadastrar Filme</button>
+    <div id="exibir"></div>
+<script>
+    var filmes = [];
+
+    function cadastrar(){
+        filmes.push(iptFilme.value);
+        iptFilme.value = '';
+        iptFilme.focus();
+
+        let terceiro = 'Ainda não existe';
+        if(filmes.length >= 3){
+            terceiro = filmes[2];
+        }
+        exibir.innerHTML = `Seu filme favorito: ${filmes[0]}<br>
+        Seu 3º filme favorito: ${terceiro}<br>
+        Total de filmes cadastrados: ${filmes.length}`;
+    }
+</script>
+</body>
+</html>

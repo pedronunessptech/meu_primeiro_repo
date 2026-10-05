@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes em Cores</title>
+</head>
+<body>
+    <h2>Filmes em Cores: Azul e Vermelho!</h2>
+    <label for="iptFilme">Nome do filme: </label>
+    <input type="text" id="iptFilme">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="exibir"></div>
+<script>
+    var filmes = [];
+
+    function cadastrar(){
+        let filme = iptFilme.value;
+        filmes.push(filme);
+
+        let cor = 'red';
+        if(filmes.length % 2 == 1){
+            cor = 'blue';
+        }
+        exibir.innerHTML += `<span style="color: ${cor};">${filme}</span><br>`;
+        iptFilme.value = '';
+        iptFilme.focus();
+    }
+</script>
+</body>
+</html>

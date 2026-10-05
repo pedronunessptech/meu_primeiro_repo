@@ -13,16 +13,20 @@
 </body>
 </html>
 <script>
-    let qtd = 0;
-    function pares(){
-        let num = Number(ipt_num.value)
-        while(qtd < num){
+    let num = 0;
+    function multiplos(){
+        let limite = Number(ipt_num.value)
+        if(limite>=20 && limite<=100){
+        while(num < limite){
             num ++
-            if(qtd*5){
-                exibir.innerHTML += `${qtd}<br>`
+            if(num%5 == 0){
+                exibir.innerHTML += `${num}<br>`
             }
         }
+        
     }
+}
+        
         
 
 </script>

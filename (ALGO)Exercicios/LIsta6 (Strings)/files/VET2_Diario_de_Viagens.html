@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário de Viagens</title>
+</head>
+<body>
+    <h2>Diário de Viagens!</h2>
+    <label for="iptDestino">Destino de viagem: </label>
+    <input type="text" id="iptDestino">
+    <button onclick="adicionar()">Adicionar</button>
+    <br><br>
+    <button onclick="primeira()">Primeira viagem</button>
+    <button onclick="terceira()">Terceira viagem</button>
+    <button onclick="ultima()">Última viagem</button>
+    <div id="exibir"></div>
+<script>
+    var destinos = [];
+
+    function adicionar(){
+        destinos.push(iptDestino.value);
+        iptDestino.value = '';
+        iptDestino.focus();
+    }
+    function primeira(){
+        if(destinos.length == 0){
+            exibir.innerHTML = `Ainda não viajou`;
+        } else {
+            exibir.innerHTML = destinos[0];
+        }
+    }
+    function terceira(){
+        if(destinos.length < 3){
+            exibir.innerHTML = `Ainda não fez a terceira viagem`;
+        } else {
+            exibir.innerHTML = destinos[2];
+        }
+    }
+    function ultima(){
+        if(destinos.length == 0){
+            exibir.innerHTML = `Ainda não viajou`;
+        } else {
+            exibir.innerHTML = destinos.at(-1);
+        }
+    }
+</script>
+</body>
+</html>
