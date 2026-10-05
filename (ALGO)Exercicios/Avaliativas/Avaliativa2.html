@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Doceria DORI</h1>
+    <label for="ipt_maca">Insira a quantidade de Macarions vendidos: </label>
+    <input type="text" id="ipt_maca"><br>
+    <label for="ipt_brig">Insira a quantidade de Brigadeiros Gourmet vendidos: </label>
+    <input type="text" id="ipt_brig"><br>
+    <label for="ipt_cup">Insira a quantidade de Cupcakes vendidos: </label>
+    <input type="text" id="ipt_cup"><br>
+    <label for="ipt_cheese">Insira a quantidade de Cheesecakess vendidos: </label>
+    <input type="text" id="ipt_cheese"><br>
+
+    <label for="ipt_macaPrc">Insira o preço do Macaron: </label>
+    <input type="text" id="ipt_macaPrc"><br>
+    <label for="ipt_brigPrc">Insira o preço do Brigadeiros Gourmet: </label>
+    <input type="text" id="ipt_brigPrc"><br>
+    <label for="ipt_cupPrc">Insira o preço do Cupcake: </label>
+    <input type="text" id="ipt_cupPrc"><br>
+    <label for="ipt_cheesePrc">Insira o preço do Cheesecakes: </label>
+    <input type="text" id="ipt_cheesePrc"><br>
+    <button onclick="verificar()">Verificar Vendas</button> 
+    <div id="exibir"></div>
+
+</body>
+</html>
+<script>
+    let contVenda = 0;
+    let contCMD = 0;
+    function verificar(){
+        let qtdMaca = Number(ipt_maca.value);
+        let prcMaca = Number(ipt_macaPrc.value);
+        let qtdBrig = Number(ipt_brig.value);
+        let prcBrig = Number(ipt_brigPrc.value);
+        let qtdCup = Number(ipt_cup.value);
+        let prcCup = Number(ipt_cupPrc.value);
+        let qtdCheese = Number(ipt_cheese.value);
+        let prcCheese = Number(ipt_cheesePrc.value);
+        let vendas = qtdBrig+qtdCheese+qtdCup+qtdMaca
+        if(qtdMaca > 0 && prcMaca > 0 && qtdBrig > 0 &&prcBrig > 0 &&qtdCup > 0 &&prcCup > 0 &&qtdCheese > 0 &&prcCheese > 0){
+            while(contVenda < vendas){
+                contVenda ++
+                while(contVenda < qtdMaca){
+                    if(qtdMaca =0){
+
+                    }else{
+                    exibir.innerHTML += `Venda ${contVenda} - IMG macaron - 1<br>`
+                }
+                }
+                while(contVenda < qtdBrig){
+                    if(qtdBrig =0){
+
+                    }else{
+                    exibir.innerHTML += `Venda ${contVenda} - IMG brigadeiro - 2<br>`
+                }
+                }
+                 while(contVenda < qtdCup){
+                    if(qtdCup =0){
+
+                    }else{
+                    exibir.innerHTML += `Venda ${contVenda} - IMG cupcake - 3<br>`
+                }
+                }
+                 while(contVenda < qtdCheese){
+                    if(qtdCheese =0){
+
+                    }else{
+                    exibir.innerHTML += `Venda ${contVenda} - IMG cheesecake - 4<br>`
+                }
+                }
+
+            }
+            let total = prcMaca*qtdMaca + prcBrig*qtdBrig + prcCup*qtdCup + prcCheese*qtdCheese
+            let perMaca = prcMaca*qtdMaca * 100 / total
+            let perBrig = prcBrig*qtdBrig * 100 / total
+            let perCup = prcCup*qtdCup * 100 / total
+            let perCheese = prcCheese*qtdCheese * 100 / total
+            exibir.innerHTML += `Com a quantidade de ${qtdMaca} Macarons (${perMaca.toFixed(1)}% do total), ${qtdBrig} Brigadeiros (${perBrig.toFixed(1)}% do total), ${qtdCup} Cupcakes (${perCup.toFixed(1)}% do total) e ${qtdCheese} Cheesecakes (${perCheese}% do total), a venda totalizará R$${total.toFixed(2)}`
+        }else{
+            alert('Preencha corretamente todos os campos')
+        }
+        
+    }
+</script>

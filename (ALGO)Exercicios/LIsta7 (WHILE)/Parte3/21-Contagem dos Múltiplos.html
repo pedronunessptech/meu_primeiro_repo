@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="ipt_n1">Insira um número limite: </label>
+    <input type="text" id="ipt_n1">
+    <label for="ipt_n2">Insira um número para divisibilidade: </label>
+    <input type="text" id="ipt_n2">
+    <button onclick="somar()">Somar Números</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    let total = 0;
+    let cont = 0;
+    function somar(){
+        let n1 = Number(ipt_n1.value)
+        let n2 = Number(ipt_n2.value)
+        while(cont<n1){
+            cont ++
+            if(cont%n2 == 0){
+                exibir.innerHTML += `${cont}<br>`
+                total = total + cont
+        }
+        }
+        exibir.innerHTML += `Soma dos multiplos: ${total}`
+    }
+</script>
+<!-- 21. Contagem dos Múltiplos
+
+Crie  um programa o qual:
+
+a) Receba um número positivo do usuário, que é o limite da contagem;
+
+b) Receba um segundo número, para testes de divisibilidade, que deve estar entre 1 e o número informado em a);
+
+c) Ao clicar em "Somar Números", deve exibir todos os números múltiplos do número informado em b)  entre 1 e o número informado em a); 
+
+d) Ao final da contagem, exiba a frase "Soma dos Múltiplos: X", sendo X a soma de todos os números múltiplos do número informado pelo usuário -->

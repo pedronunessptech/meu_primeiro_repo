@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Soma dos Pares</h1>
+    <label for="ipt_n1">Insira um número(10-500): </label>
+    <input type="text" id="ipt_n1">
+    <button onclick="somar()">Somar Pares</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    let total = 0;
+    let cont = 0;
+    function somar(){
+        let num = Number(ipt_n1.value)
+        while(cont<num){
+            cont ++
+            if(cont%2 == 0){
+                exibir.innerHTML += `${cont}<br>`
+                total = total + cont
+        }
+
+        }
+        exibir.innerHTML += `Soma dos pares: ${total}`
+    }
+</script>
+<!-- 20. Soma dos Pares
+
+Crie  um programa o qual:
+
+a) Solicite um número, que deve estar entre 10 e 500, exibindo alerta de erro caso não atenda os critérios;
+
+b) Ao clicar no botão "Somar Pares", deve exibir todos os números pares entre 1 e o número inserido pelo usuário;
+
+c) Ao final da listagem, deve exibir a frase "Soma dos pares: X", sendo X a soma de todos os números exibidos; -->

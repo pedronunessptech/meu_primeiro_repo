@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisibilidade</title>
+</head>
+<body>
+    <label for="ipt_inicio">Insira o início do intervalo: </label>
+    <input type="text" id="ipt_inicio"><br>
+    <label for="ipt_fim">Insira o fim do intervalo: </label>
+    <input type="text" id="ipt_fim"><br>
+    <label for="ipt_divisor">Insira o divisor (3 a 13): </label>
+    <input type="text" id="ipt_divisor">
+    <button onclick="dividir()">Divisível</button>
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    function dividir(){
+        let inicio = Number(ipt_inicio.value);
+        let fim = Number(ipt_fim.value);
+        let divisor = Number(ipt_divisor.value);
+        exibir.innerHTML = '';
+        if(divisor >= 3 && divisor <= 13 && inicio <= fim){
+            let num = inicio;
+            while(num <= fim){
+                if(num % divisor != 0){
+                    exibir.innerHTML += `${num}<br>`;
+                }
+                num ++;
+            }
+        }else{
+            exibir.innerHTML = `<b style="color: red;">Valor inválido!</b><br>`;
+        }
+    }
+</script>
+<!-- 14. Divisibilidade  
+
+Crie um programa o qual:
+
+a) Solicite um intervalo crescente de valores numéricos
+
+b) Solicite um número para teste de divisibilidade, ele tem que estar entre 3 e 13   
+
+c) Ao clicar num botão "Divisível"...   
+
+c) Exiba, debaixo do botão, todos os números contidos no intervalo do item a que NÃO são divisíveis pelo número do item b.
+
+OBS: ao informar '1 a 10' no intervalo e informar '3' no divisor, deve exibir todos os números, exceto os múltiplos de 3 (como 3, 6 e 9). -->

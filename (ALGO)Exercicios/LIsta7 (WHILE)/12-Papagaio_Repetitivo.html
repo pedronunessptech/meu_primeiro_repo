@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Papagaio Repetitivo</title>
 </head>
 <body>
-    <label for="ipt_num">Insira um numero: </label>
-    <input type="text" id="ipt_num">
+    <label for="ipt_num">Insira um número: </label>
+    <input type="text" id="ipt_num"><br>
     <label for="ipt_frase">Insira uma frase: </label>
     <input type="text" id="ipt_frase">
     <button onclick="papagaio()">Papagaio Repetitivo</button>
@@ -15,14 +15,20 @@
 </body>
 </html>
 <script>
-    let qtd = 0;
     function papagaio(){
-        let num = Number(ipt_num.value)
-        let frase = ipt_frase.value
-        while(qtd<=num){
-        qtd ++
-        exibir.innerHTML = `${qtd} - ${frase}`
-        
+        let num = Number(ipt_num.value);
+        let frase = ipt_frase.value;
+        let qtd = 0;
+        exibir.innerHTML = '';
+        while(qtd < num){
+            qtd ++;
+            let fraseRepetida = '';
+            let repeticoes = 0;
+            while(repeticoes < qtd){
+                repeticoes ++;
+                fraseRepetida += `${frase} `;
+            }
+            exibir.innerHTML += `${qtd} - ${fraseRepetida}<br>`;
         }
     }
 </script>

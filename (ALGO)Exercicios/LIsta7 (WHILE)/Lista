@@ -299,3 +299,94 @@ a) Solicite ao usuário a quantidade elefantes;
 b) Ao clicar em "Atazanar a médium", exiba sempre o trecho da canção de 1 elefante, seguido do trecho com 2 elefantes e depois 3... até a quantidade de elefantes indicado em a). Note que a palavra "incomodam" repete-se conforme essa mesma quantidade.   
 
 Por exemplo, o se o usuário informar 4 em a), devem aparecer 3 estrofes, como no enunciado da questão, de "2 elefantes" até "4 elefantes", sempre repetindo a frase do "1 elefante incomoda muita gente" antes de cada estrofe. 
+
+
+ Parte 3 - Divisibilidade
+
+OBS GERAL: para saber se o número é divisível ou múltiplo por outro, o resto da divisão deve ser 0 
+ 
+18. Divisores
+
+Crie  um programa o qual:
+
+a) Receba um número do usuário, que deve estar entre 0 e 100;
+
+b) Ao clicar no botão "Ver Divisores", deve exibir na tela, abaixo do botão, todos os divisores do número informado, como o exemplo abaixo, onde o usuário inseriu o número "10": 
+
+     Divisores do Número 10:
+
+     1
+
+     2
+
+     5
+
+     10
+
+
+
+19. Números Primos
+
+Crie  um programa o qual:
+
+a) Ao exibir os divisores do número informado, caso o número seja divisível somente por 1 e por ele mesmo, exiba abaixo: 
+
+     Divisores do Número 13:
+
+     1
+
+     13
+
+     O número 13 é um número primo.
+
+
+
+20. Soma dos Pares
+
+Crie  um programa o qual:
+
+a) Solicite um número, que deve estar entre 10 e 500, exibindo alerta de erro caso não atenda os critérios;
+
+b) Ao clicar no botão "Somar Pares", deve exibir todos os números pares entre 1 e o número inserido pelo usuário;
+
+c) Ao final da listagem, deve exibir a frase "Soma dos pares: X", sendo X a soma de todos os números exibidos;
+
+
+
+21. Contagem dos Múltiplos
+
+Crie  um programa o qual:
+
+a) Receba um número positivo do usuário, que é o limite da contagem;
+
+b) Receba um segundo número, para testes de divisibilidade, que deve estar entre 1 e o número informado em a);
+
+c) Ao clicar em "Somar Números", deve exibir todos os números múltiplos do número informado em b)  entre 1 e o número informado em a); 
+
+d) Ao final da contagem, exiba a frase "Soma dos Múltiplos: X", sendo X a soma de todos os números múltiplos do número informado pelo usuário
+
+
+
+22. Contagem Simples
+
+Crie um programa o qual:
+
+a) Receba o limite inferior da amostragem. Esse número que ser maior que 1, caso contrário emitir mensagem explicativa e não seguir em frente.  
+
+b) Receba o limite superior da amostragem. Esse número que ser menor que 100 e maior que o limite inferior (item a), caso contrário emitir mensagem explicativa e não seguir em frente 
+
+c) Receba o número para testar a divisibilidade, esse número tem que estar entre 3 e 10, caso contrário, emitir mensagem explicativa e não seguir em frente. 
+
+d) Tenha num botão "Contar" que quando clicado exiba todos os números divisíveis pelo número informado no item c), desde o limite inferior (item a.) até o limite superior (item b.). Exibir esses números um ao lado do outro separados por uma vírgula e um espaço (, ).  
+
+e) Ao final, sem apagar as mensagens anteriores mostre as seguintes mensagens: 
+
+    QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: 99 
+
+    SOMATÓRIO DOS NÚMEROS EXIBIDOS: 999 
+
+    MÉDIA DOS NÚMEROS EXIBIDOS: 99,99 
+
+    MAIOR NÚMERO EXIBIDO: 99 
+
+    MENOR NÚMERO EXIBIDO: 99 
