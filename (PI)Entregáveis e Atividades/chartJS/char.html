@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart JS</title>
+</head>
+<body>
+    <div>
+  <canvas id="myChart"></canvas>
+</div>  
+<div>
+  <canvas id="myChart2"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const temperatura = document.getElementById('myChart');
+  const temperaturaMes = document.getElementById('myChart2');
+
+  new Chart(temperatura, {
+    type: 'line',
+    data: {
+      labels: ['12:00','13:00','14:00','15:00','16:00', ],
+      datasets: [{
+        label: 'Temperatura(Cº)',
+        data: [30, 29, 28, 25, 22, 23],
+        borderWidth: 1},{
+        label: 'Umidade',
+        data: [80, 82, 80, 85, 80, 83],
+        borderWidth: 1
+      }]
+      
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+
+  new Chart(temperaturaMes, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Temperatura Média (p/Mês)',
+        data: [22, 24, 27, 23, 20, 18],
+        borderWidth: 1},{
+        label: 'Umidade Média (p/Mês)',
+        data: [90, 89, 93, 87, 88, 82],
+        borderWidth: 1
+      }]
+      
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+</script>
+</body>
+</html>
